@@ -8,6 +8,14 @@ namespace RPG.Core
     {
         [SerializeField] private Transform Target;
 
+        void Start()
+        {
+            if (Target == null)
+            {
+                Target = GameObject.Find("Player").transform;
+            }
+        }
+
         void LateUpdate()
         {
             this.transform.position = Target.position;
