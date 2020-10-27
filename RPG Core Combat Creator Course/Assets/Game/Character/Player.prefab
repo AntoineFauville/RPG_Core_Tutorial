@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f6f9dced6eade47ab83e4e0dc51431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mover: {fileID: 0}
 --- !u!1001 &542834036356302378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,6 +149,16 @@ PrefabInstance:
         type: 3}
       propertyPath: timeBetweenAttacks
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 87565514147856031, guid: 4265123ae2299f94c8381c480d3f9ec9,
+        type: 3}
+      propertyPath: weaponDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486705690012846050, guid: 4265123ae2299f94c8381c480d3f9ec9,
+        type: 3}
+      propertyPath: healthPoints
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4265123ae2299f94c8381c480d3f9ec9, type: 3}
