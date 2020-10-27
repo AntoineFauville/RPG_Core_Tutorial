@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 887, y: 498}
   m_MaxSize: {x: 16012, y: 14048}
   vertical: 1
-  controlID: 34
+  controlID: 170
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 887, y: 224}
   m_MaxSize: {x: 16012, y: 4024}
   vertical: 0
-  controlID: 35
+  controlID: 171
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -161,8 +161,8 @@ MonoBehaviour:
     y: 0
     width: 818
     height: 663
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 224}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -270,10 +270,10 @@ MonoBehaviour:
     y: 663
     width: 1920
     height: 284
-  m_MinSize: {x: 334, y: 274}
-  m_MaxSize: {x: 14004, y: 10024}
+  m_MinSize: {x: 332, y: 274}
+  m_MaxSize: {x: 14002, y: 10024}
   vertical: 0
-  controlID: 110
+  controlID: 78
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -472,9 +472,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.4980588, y: 7.843177, z: -1.5500059}
+    m_Target: {x: 2.0115047, y: 3.836442, z: -9.04669}
     speed: 2
-    m_Value: {x: -2.4980588, y: 7.843177, z: -1.5500059}
+    m_Value: {x: 2.0115047, y: 3.836442, z: -9.04669}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -502,13 +502,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.37683672, y: -0.28366697, z: 0.12241552, w: 0.8732363}
+    m_Target: {x: 0.10962329, y: -0.8880766, z: 0.27997643, w: 0.34772974}
     speed: 2
-    m_Value: {x: 0.37683672, y: -0.28366697, z: 0.12241552, w: 0.8732363}
+    m_Value: {x: 0.10962329, y: -0.8880766, z: 0.27997643, w: 0.34772974}
   m_Size:
-    m_Target: 6.866176
+    m_Target: 6.5370617
     speed: 2
-    m_Value: 6.866176
+    m_Value: 6.5370617
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -549,9 +549,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: acfaffff
-      m_LastClickedID: -1364
-      m_ExpandedIDs: d6fbffff
+      m_SelectedIDs: 80e8ffff
+      m_LastClickedID: -6016
+      m_ExpandedIDs: 80e8ffffd6fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -726,21 +726,21 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Combat
+    - Assets/Game/Character
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/Combat
+  - Assets/Game/Character
   m_LastFoldersGridSize: 16
   m_LastProjectPath: F:\Unity\RPG_Tutorial_Core_Rick_Sam\RPG_Core_Tutorial\RPG Core
     Combat Creator Course
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 389}
-    m_SelectedIDs: f80b0000
-    m_LastClickedID: 3064
-    m_ExpandedIDs: 00000000a6090000ce090000e60a0000660b0000e60b0000120c000000ca9a3b
+    scrollPos: {x: 0, y: 337}
+    m_SelectedIDs: 180b0000
+    m_LastClickedID: 2840
+    m_ExpandedIDs: 00000000a8090000d0090000e80a0000680b0000e80b0000140c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -768,7 +768,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a6090000ce090000e60a0000660b0000e60b0000120c0000
+    m_ExpandedIDs: 00000000a8090000d0090000e80a0000680b0000e80b0000140c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: da010000001d00000c090000160700007e060000e41d00000c080000541e0000200c00005c070000760c000064070000c8070000880c0000900b0000cc060000e60b0000d406000038070000f80b00007e1c00000c1e00006a05000076050000e41e0000aa220000ae220000561e0000ba1e0000101f0000d8220000dc220000860500002e230000580a0000640600000e210000fa090000660500002c0600002a8100007c460000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -812,7 +812,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 10}
+      m_ClientGUIView: {fileID: 12}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -851,7 +851,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -1364
+  m_LastSelectedObjectID: -6016
 --- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
