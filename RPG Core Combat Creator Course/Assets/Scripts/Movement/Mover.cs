@@ -14,6 +14,7 @@ namespace RPG.Movement
         private Health _health;
 
         [SerializeField] private Transform _target;
+        [SerializeField] private float _maxSpeed = 6f;
         
         void Start()
         {
@@ -30,15 +31,16 @@ namespace RPG.Movement
             UpdateAnimator();
         }
 
-        public void StartMoveAction(Vector3 destination)
+        public void StartMoveAction(Vector3 destination, float fractionSpeed)
         {
             _actionScheduler.StartAction(this);
-            MoveTo(destination);
+            MoveTo(destination, fractionSpeed);
         }
         
-        public void MoveTo(Vector3 destination)
+        public void MoveTo(Vector3 destination, float fractionSpeed)
         {
             _navMeshAgent.destination = destination;
+            _navMeshAgent.speed = _maxSpeed * Mathf.Clamp01(fractionSpeed);
             _navMeshAgent.isStopped = false;
         }
 

@@ -26,6 +26,8 @@ namespace RPG.Control
         [SerializeField] private PatrolPath _patrolPath;
         [SerializeField] private float _waypointTolerance = 1f;
         [SerializeField] private float _waypointDwellTime = 1f; // waiting time
+        [Range(0,1)]
+        [SerializeField] private float _patrolFractionSpeed = 0.2f;
 
         void Start()
         {
@@ -81,7 +83,7 @@ namespace RPG.Control
 
             if (_timeSinceArrivedAtWaypoint > _waypointDwellTime)
             {
-                _mover.StartMoveAction(nextPosition); // this cancels the previous action and move to next action
+                _mover.StartMoveAction(nextPosition, _patrolFractionSpeed); // this cancels the previous action and move to next action
             }
         }
         
