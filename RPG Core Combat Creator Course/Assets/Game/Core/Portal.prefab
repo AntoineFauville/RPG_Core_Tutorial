@@ -79,7 +79,7 @@ MonoBehaviour:
   _portalSpawnPoint: {fileID: 6690735307962111428}
   _destinationIdentifier: 0
   fadeOutTime: 0.3
-  fadeWaitTime: 1
+  fadeWaitTime: 0.3
   fadeInTime: 0.3
 --- !u!1 &4900005271279655794
 GameObject:
