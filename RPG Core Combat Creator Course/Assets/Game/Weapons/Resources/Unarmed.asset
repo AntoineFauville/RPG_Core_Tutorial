@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f8df5258380b444adcb57b81332991, type: 3}
+  m_Name: Unarmed
+  m_EditorClassIdentifier: 
+  equippedPrefab: {fileID: 0}
+  animatorOverride: {fileID: 0}
+  weaponDamage: 3
+  weaponRange: 2
+  isRightHanded: 1
+  ProjectilePrefab: {fileID: 0}
+  timeBetweenAttacks: 1
+  hitEffectPrefab: {fileID: 2374721026016395445, guid: b383f5f36b7a2eb4ca1ffa9dd5cccab5,
+    type: 3}

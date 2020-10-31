@@ -12,6 +12,10 @@ namespace RPG.Control
         private Mover _mover;
         private Health _health;
 
+        private bool _holdOnSpamming;
+        [SerializeField] private float _timeSpammClick = 0.1f;
+        [SerializeField] private float _minimumDistanceToMove = 0.5f;
+
         Ray lastRay;
         
         void Start()
@@ -58,13 +62,18 @@ namespace RPG.Control
             RaycastHit hit;
             bool hasHit = Physics.Raycast(GetMouseRay(), out hit);
 
-            if (hasHit)
+            if (Vector3.Distance(hit.point, transform.position) > _minimumDistanceToMove)
             {
-                if (Input.GetMouseButton(0))
+                if (hasHit)
                 {
-                    _mover.StartMoveAction(hit.point, 1f);
+                    if (Input.GetMouseButton(0) && !_holdOnSpamming)
+                    {
+                        _holdOnSpamming = true;
+                        _mover.StartMoveAction(hit.point, 1f);
+                        StartCoroutine(HoldOnSpamming());
+                    }
+                    return true;
                 }
-                return true;
             }
             return false;
         }
@@ -72,6 +81,12 @@ namespace RPG.Control
         private static Ray GetMouseRay()
         {
             return Camera.main.ScreenPointToRay(Input.mousePosition);
+        }
+
+        IEnumerator HoldOnSpamming()
+        {
+            yield return new WaitForSeconds(_timeSpammClick);
+            _holdOnSpamming = false;
         }
     }
 }

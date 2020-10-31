@@ -31,6 +31,7 @@ MonoBehaviour:
   _patrolPath: {fileID: 0}
   _waypointTolerance: 1
   _waypointDwellTime: 1
+  _patrolFractionSpeed: 0.2
 --- !u!114 &7108359793191452457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,20 +111,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 87565514147856031, guid: 4265123ae2299f94c8381c480d3f9ec9,
-        type: 3}
-      propertyPath: weaponDamage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 87565514147856031, guid: 4265123ae2299f94c8381c480d3f9ec9,
-        type: 3}
-      propertyPath: timeBetweenAttacks
-      value: 0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 4256018446264040016, guid: 4265123ae2299f94c8381c480d3f9ec9,
         type: 3}
       propertyPath: m_Speed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256018446264040017, guid: 4265123ae2299f94c8381c480d3f9ec9,
+        type: 3}
+      propertyPath: _maxSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2486705690012846050, guid: 4265123ae2299f94c8381c480d3f9ec9,
         type: 3}
@@ -135,6 +131,43 @@ PrefabInstance:
       propertyPath: healthPoints
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 87565514147856031, guid: 4265123ae2299f94c8381c480d3f9ec9,
+        type: 3}
+      propertyPath: weaponDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 87565514147856031, guid: 4265123ae2299f94c8381c480d3f9ec9,
+        type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 87565514147856031, guid: 4265123ae2299f94c8381c480d3f9ec9,
+        type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 4410776843588985853}
+    - target: {fileID: 87565514147856031, guid: 4265123ae2299f94c8381c480d3f9ec9,
+        type: 3}
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 414151463483714416, guid: f5523226059aabe4fb55120b60b760d9,
+        type: 3}
+    - target: {fileID: 87565514147856031, guid: 4265123ae2299f94c8381c480d3f9ec9,
+        type: 3}
+      propertyPath: _weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 086618191b13d2540865a1961c37e871,
+        type: 2}
+    - target: {fileID: 87565514147856031, guid: 4265123ae2299f94c8381c480d3f9ec9,
+        type: 3}
+      propertyPath: leftHandTransform
+      value: 
+      objectReference: {fileID: 4410776843588912127}
+    - target: {fileID: 87565514147856031, guid: 4265123ae2299f94c8381c480d3f9ec9,
+        type: 3}
+      propertyPath: rightHandTransform
+      value: 
+      objectReference: {fileID: 4410776843588985853}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4265123ae2299f94c8381c480d3f9ec9, type: 3}
 --- !u!1 &621790621013286323 stripped
@@ -206,3 +239,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+--- !u!4 &4410776843588912127 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 481036, guid: 30cf93deff988e74e88a144bd2127c18,
+    type: 3}
+  m_PrefabInstance: {fileID: 4410776843589096691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4410776843588985853 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 423694, guid: 30cf93deff988e74e88a144bd2127c18,
+    type: 3}
+  m_PrefabInstance: {fileID: 4410776843589096691}
+  m_PrefabAsset: {fileID: 0}
