@@ -191,11 +191,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2486705690012846050, guid: 4265123ae2299f94c8381c480d3f9ec9,
-        type: 3}
-      propertyPath: healthPoints
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 87565514147856031, guid: 4265123ae2299f94c8381c480d3f9ec9,
         type: 3}
       propertyPath: timeBetweenAttacks
@@ -242,6 +237,17 @@ PrefabInstance:
         type: 3}
       propertyPath: characterClass
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666232126992484755, guid: 4265123ae2299f94c8381c480d3f9ec9,
+        type: 3}
+      propertyPath: levelUpParticleEffect
+      value: 
+      objectReference: {fileID: 5944799558255157457, guid: ceea69383a41ddb44a3d564f90786d81,
+        type: 3}
+    - target: {fileID: 1666232126992484755, guid: 4265123ae2299f94c8381c480d3f9ec9,
+        type: 3}
+      propertyPath: shouldUseModifiers
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4265123ae2299f94c8381c480d3f9ec9, type: 3}
