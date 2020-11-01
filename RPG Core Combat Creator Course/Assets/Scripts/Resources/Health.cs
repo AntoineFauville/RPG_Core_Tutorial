@@ -13,7 +13,7 @@ namespace RPG.Resources
         private Animator _animator;
         private ActionScheduler _actionScheduler;
 
-        public float healthPoints = 100f;
+        public float healthPoints = -1f;
 
         private bool isDead = false;
 
@@ -27,7 +27,10 @@ namespace RPG.Resources
             _animator = GetComponent<Animator>();
             _actionScheduler = GetComponent<ActionScheduler>();
 
-            healthPoints = GetComponent<BaseStats>().GetStat(Stat.Health);
+            if (healthPoints < 0)
+            {
+                healthPoints = GetComponent<BaseStats>().GetStat(Stat.Health);
+            }
         }
 
         public void TakeDamage(GameObject instigator, float damage)
