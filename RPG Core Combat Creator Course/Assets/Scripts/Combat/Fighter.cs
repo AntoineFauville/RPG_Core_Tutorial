@@ -160,7 +160,9 @@ namespace RPG.Combat
 
         public object CaptureState()
         {
-            return currentWeapon.value.name;
+            string nam = currentWeapon.value.name;
+            print(nam + gameObject);
+            return nam;
         }
 
         public void RestoreState(object state)

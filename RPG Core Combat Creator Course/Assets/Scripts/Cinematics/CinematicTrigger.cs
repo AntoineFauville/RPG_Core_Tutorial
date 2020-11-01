@@ -21,11 +21,13 @@ namespace RPG.Cinematics
 
         public object CaptureState()
         {
+            Debug.Log("Saved CinematicTrigger");
             return alreadyTriggered;
         }
 
         public void RestoreState(object state)
         {
+            Debug.Log("Restored CinematicTrigger");
             alreadyTriggered = (bool)state;
         }
     }
