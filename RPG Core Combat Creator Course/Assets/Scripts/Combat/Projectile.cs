@@ -1,4 +1,4 @@
-﻿using RPG.Core;
+﻿using RPG.Resources;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +17,7 @@ namespace RPG.Combat
         Health _target = null;
         float _damage = 0;
         GameObject _hitEffectPrefab;
+        GameObject _instigator;
 
         private void Start()
         {
@@ -37,10 +38,11 @@ namespace RPG.Combat
             _hitEffectPrefab = hitEffectPrefab;
         }
 
-        public void SetTarget(Health target, float damage)
+        public void SetTarget(Health target, GameObject instigator, float damage)
         {
             _target = target;
             _damage = damage;
+            _instigator = instigator;
 
             Destroy(gameObject, maxLifeTime);
         }
@@ -59,7 +61,7 @@ namespace RPG.Combat
         {
             if (other.GetComponent<Health>() != _target) { return; }
             if (_target.IsDead()) { return; }
-            _target.TakeDamage(_damage);
+            _target.TakeDamage(_instigator, _damage);
 
             if (_hitEffectPrefab != null)
             {

@@ -28,6 +28,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timeSpammClick: 0.3
   _minimumDistanceToMove: 0.8
+--- !u!114 &3085445032346769599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3457556654924139173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa61ac841796ae45b97da66c796d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experiencePoints: 0
 --- !u!1001 &542834036356302378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -224,6 +237,11 @@ PrefabInstance:
         type: 3}
       propertyPath: uniqueIdentifier
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666232126992484755, guid: 4265123ae2299f94c8381c480d3f9ec9,
+        type: 3}
+      propertyPath: characterClass
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4265123ae2299f94c8381c480d3f9ec9, type: 3}
