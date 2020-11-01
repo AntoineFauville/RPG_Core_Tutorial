@@ -1,4 +1,5 @@
-﻿using RPG.Combat;
+﻿using GameDevTV.Utils;
+using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;
 using RPG.Resources;
@@ -11,13 +12,9 @@ namespace RPG.Control
 {
     public class AIController : MonoBehaviour
     {
-        private Fighter _fighter;
-        private Health _health;
-        private Mover _mover;
         private GameObject _player;
-        private ActionScheduler _actionScheduler;
         
-        private Vector3 _guardPosition;
+        LazyValue<Vector3> _guardPosition;
         private float _timeSinceLastSawPlayer = Mathf.Infinity;
         private float _timeSinceArrivedAtWaypoint = Mathf.Infinity;
         private int _currentWayPointIndex = 0;
@@ -30,22 +27,28 @@ namespace RPG.Control
         [Range(0,1)]
         [SerializeField] private float _patrolFractionSpeed = 0.2f;
 
-        void Start()
+        private void Awake()
         {
-            _fighter = GetComponent<Fighter>();
-            _mover = GetComponent<Mover>();
             _player = GameObject.FindGameObjectWithTag("Player");
-            _health = GetComponent<Health>();
-            _actionScheduler = GetComponent<ActionScheduler>();
 
-            _guardPosition = transform.position;
+            _guardPosition = new LazyValue<Vector3>(GetGuardPosition);
+        }
+
+        private Vector3 GetGuardPosition()
+        {
+            return transform.position;
+        }
+
+        private void Start()
+        {
+            _guardPosition.ForceInit();
         }
 
         private void Update()
         {
-            if (_health.IsDead()) { return; }
+            if (GetComponent<Health>().IsDead()) { return; }
 
-            if (InAttackRangeOfPlayer() && _fighter.CanAttack(_player))
+            if (InAttackRangeOfPlayer() && GetComponent<Fighter>().CanAttack(_player))
             {
                 AttackBehavior();
             }
@@ -69,7 +72,7 @@ namespace RPG.Control
 
         private void PatrolBehavior()
         {
-            Vector3 nextPosition = _guardPosition;
+            Vector3 nextPosition = _guardPosition.value;
 
             if (_patrolPath != null)
             {
@@ -84,7 +87,7 @@ namespace RPG.Control
 
             if (_timeSinceArrivedAtWaypoint > _waypointDwellTime)
             {
-                _mover.StartMoveAction(nextPosition, _patrolFractionSpeed); // this cancels the previous action and move to next action
+                GetComponent<Mover>().StartMoveAction(nextPosition, _patrolFractionSpeed); // this cancels the previous action and move to next action
             }
         }
         
@@ -106,13 +109,13 @@ namespace RPG.Control
 
         private void SuspicionBehavior()
         {
-            _actionScheduler.CancelCurrentAction();
+            GetComponent<ActionScheduler>().CancelCurrentAction();
         }
 
         private void AttackBehavior()
         {
             _timeSinceLastSawPlayer = 0;
-            _fighter.Attack(_player);
+            GetComponent<Fighter>().Attack(_player);
         }
 
         private bool InAttackRangeOfPlayer()

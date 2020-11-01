@@ -25,7 +25,7 @@ namespace RPG.Combat
                 return;
             }
             Health health = fighter.GetTarget();
-            healthText.text = health.healthPoints.ToString();
+            healthText.text = health.GetHealth().ToString();
         }
     }
 }

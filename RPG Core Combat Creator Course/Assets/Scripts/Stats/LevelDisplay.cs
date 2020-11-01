@@ -11,7 +11,7 @@ namespace RPG.Stats
 
         [SerializeField] private Text baseStatsText;
 
-        private void Awake()
+        private void Start()
         {
             baseStats = GameObject.FindWithTag("Player").GetComponent<BaseStats>();
         }

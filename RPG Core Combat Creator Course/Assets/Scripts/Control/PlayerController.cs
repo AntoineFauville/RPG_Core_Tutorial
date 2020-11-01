@@ -9,24 +9,22 @@ namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
-        private Mover _mover;
-        private Health _health;
-
         private bool _holdOnSpamming;
         [SerializeField] private float _timeSpammClick = 0.1f;
         [SerializeField] private float _minimumDistanceToMove = 0.5f;
 
         Ray lastRay;
-        
-        void Start()
+
+        Health health;
+
+        private void Awake()
         {
-            _mover = GetComponent<Mover>();
-            _health = GetComponent<Health>();
+            health = GetComponent<Health>();
         }
-        
+
         void Update()
         {
-            if (_health.IsDead()) { return; }
+            if (health.IsDead()) { return; }
 
             if (InteractWithCombat()) { return; }
             if (InteractWithMovement()) { return; }
@@ -69,7 +67,7 @@ namespace RPG.Control
                     if (Input.GetMouseButton(0) && !_holdOnSpamming)
                     {
                         _holdOnSpamming = true;
-                        _mover.StartMoveAction(hit.point, 1f);
+                        GetComponent<Mover>().StartMoveAction(hit.point, 1f);
                         StartCoroutine(HoldOnSpamming());
                     }
                     return true;

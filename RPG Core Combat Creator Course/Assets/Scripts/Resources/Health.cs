@@ -5,15 +5,13 @@ using RPG.Saving;
 using RPG.Stats;
 using RPG.Core;
 using System;
+using GameDevTV.Utils;
 
 namespace RPG.Resources
 {
     public class Health : MonoBehaviour, ISaveable
     {
-        private Animator _animator;
-        private ActionScheduler _actionScheduler;
-
-        public float healthPoints = -1f;
+        LazyValue<float> healthPoints;
 
         private bool isDead = false;
 
@@ -22,26 +20,60 @@ namespace RPG.Resources
             return isDead;
         }
 
+        internal float GetHealth()
+        {
+            return healthPoints.value;
+        }
+
+        public float GetHealthPoints()
+        {
+            return GetHealth();
+        }
+
+        void Awake()
+        {
+            healthPoints = new LazyValue<float>(GetInitialHealth);
+        }
+
+        private float GetInitialHealth()
+        {
+            return GetComponent<BaseStats>().GetStat(Stat.Health);
+        }
+
         void Start()
         {
-            _animator = GetComponent<Animator>();
-            _actionScheduler = GetComponent<ActionScheduler>();
+            healthPoints.ForceInit();
+        }
 
-            if (healthPoints < 0)
-            {
-                healthPoints = GetComponent<BaseStats>().GetStat(Stat.Health);
-            }
+        private void OnEnable()
+        {
+            GetComponent<BaseStats>().onLevelUp += RegenerateHealth;
+        }
+
+        private void OnDisable()
+        {
+            GetComponent<BaseStats>().onLevelUp -= RegenerateHealth;
+        }
+
+        private void RegenerateHealth()
+        {
+            healthPoints.value = GetComponent<BaseStats>().GetStat(Stat.Health);
         }
 
         public void TakeDamage(GameObject instigator, float damage)
         {
-            healthPoints = Mathf.Max(healthPoints - damage, 0);
+            healthPoints.value = Mathf.Max(healthPoints.value - damage, 0);
 
-            if (healthPoints == 0 && !isDead)
+            if (healthPoints.value == 0 && !isDead)
             {
                 Die();
                 AwardExperience(instigator);
             }
+        }
+
+        public float GetMaxHealthPoints()
+        {
+            return GetComponent<BaseStats>().GetStat(Stat.Health);
         }
 
         private void AwardExperience(GameObject instigator)
@@ -69,9 +101,9 @@ namespace RPG.Resources
 
         public void RestoreState(object state)
         {
-            healthPoints = (float)state;
+            healthPoints.value = (float)state;
 
-            if (healthPoints == 0)
+            if (healthPoints.value <= 0)
             {
                 Die();
             }
