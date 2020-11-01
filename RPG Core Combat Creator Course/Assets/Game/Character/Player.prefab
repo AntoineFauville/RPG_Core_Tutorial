@@ -28,6 +28,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timeSpammClick: 0.3
   _minimumDistanceToMove: 0.8
+  cursorMappings:
+  - type: 0
+    texture: {fileID: 2800000, guid: 21628736160fcc9488493401da3ef621, type: 3}
+    hotspot: {x: 0, y: 0}
+  - type: 1
+    texture: {fileID: 2800000, guid: 1e1ecf843f705b34ab304dff88b037c1, type: 3}
+    hotspot: {x: 0, y: 0}
+  - type: 2
+    texture: {fileID: 2800000, guid: 45d8aea3ad483cf4fb21e75f90f795d9, type: 3}
+    hotspot: {x: 0, y: 0}
+  - type: 3
+    texture: {fileID: 2800000, guid: 2e71a8202d3b4a3448ec85ced5a40265, type: 3}
+    hotspot: {x: 0, y: 0}
+  - type: 4
+    texture: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
+    hotspot: {x: 0, y: 0}
 --- !u!114 &3085445032346769599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +207,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1666232126992484755, guid: 4265123ae2299f94c8381c480d3f9ec9,
+        type: 3}
+      propertyPath: characterClass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666232126992484755, guid: 4265123ae2299f94c8381c480d3f9ec9,
+        type: 3}
+      propertyPath: levelUpParticleEffect
+      value: 
+      objectReference: {fileID: 5944799558255157457, guid: ceea69383a41ddb44a3d564f90786d81,
+        type: 3}
+    - target: {fileID: 1666232126992484755, guid: 4265123ae2299f94c8381c480d3f9ec9,
+        type: 3}
+      propertyPath: shouldUseModifiers
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 87565514147856031, guid: 4265123ae2299f94c8381c480d3f9ec9,
         type: 3}
       propertyPath: timeBetweenAttacks
@@ -232,22 +264,6 @@ PrefabInstance:
         type: 3}
       propertyPath: uniqueIdentifier
       value: player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1666232126992484755, guid: 4265123ae2299f94c8381c480d3f9ec9,
-        type: 3}
-      propertyPath: characterClass
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1666232126992484755, guid: 4265123ae2299f94c8381c480d3f9ec9,
-        type: 3}
-      propertyPath: levelUpParticleEffect
-      value: 
-      objectReference: {fileID: 5944799558255157457, guid: ceea69383a41ddb44a3d564f90786d81,
-        type: 3}
-    - target: {fileID: 1666232126992484755, guid: 4265123ae2299f94c8381c480d3f9ec9,
-        type: 3}
-      propertyPath: shouldUseModifiers
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4265123ae2299f94c8381c480d3f9ec9, type: 3}

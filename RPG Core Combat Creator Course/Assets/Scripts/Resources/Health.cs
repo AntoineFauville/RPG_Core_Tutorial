@@ -96,7 +96,6 @@ namespace RPG.Resources
 
         public object CaptureState()
         {
-            Debug.Log("Saved Health");
             return healthPoints.value;
         }
 
@@ -108,8 +107,6 @@ namespace RPG.Resources
             {
                 Die();
             }
-
-            Debug.Log("Restored Health");
         }
     }
 }
