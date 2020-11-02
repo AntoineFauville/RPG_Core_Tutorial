@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.AI;
 
 namespace RPG.Control
 {
@@ -14,6 +15,8 @@ namespace RPG.Control
         private bool _holdOnSpamming;
         [SerializeField] private float _timeSpammClick = 0.1f;
         [SerializeField] private float _minimumDistanceToMove = 0.5f;
+        [SerializeField] float maxNavMeshProjectionDistance = 1f;
+        [SerializeField] float maxNavPathLength = 40f;
 
         Ray lastRay;
 
@@ -84,17 +87,18 @@ namespace RPG.Control
         {
             Debug.DrawRay(lastRay.origin, lastRay.direction * 100);
             lastRay = GetMouseRay();
-            RaycastHit hit;
-            bool hasHit = Physics.Raycast(GetMouseRay(), out hit);
 
-            if (Vector3.Distance(hit.point, transform.position) > _minimumDistanceToMove)
+            Vector3 target;
+            bool hasHit = RaycastNavMesh(out target);
+
+            if (Vector3.Distance(target, transform.position) > _minimumDistanceToMove)
             {
                 if (hasHit)
                 {
                     if (Input.GetMouseButton(0) && !_holdOnSpamming)
                     {
                         _holdOnSpamming = true;
-                        GetComponent<Mover>().StartMoveAction(hit.point, 1f);
+                        GetComponent<Mover>().StartMoveAction(target, 1f);
                         StartCoroutine(HoldOnSpamming());
                     }
                     SetCursor(CursorType.Movement);
@@ -102,6 +106,42 @@ namespace RPG.Control
                 }
             }
             return false;
+        }
+
+        private bool RaycastNavMesh(out Vector3 target)
+        {
+            target = new Vector3();
+
+            RaycastHit hit;
+            bool hasHit = Physics.Raycast(GetMouseRay(), out hit);
+            if (!hasHit) return false;
+
+            NavMeshHit navMeshHit;
+            bool hasCastToNavMesh = NavMesh.SamplePosition(
+                hit.point, out navMeshHit, maxNavMeshProjectionDistance, NavMesh.AllAreas);
+            if (!hasCastToNavMesh) return false;
+
+            target = navMeshHit.position;
+
+            NavMeshPath path = new NavMeshPath();
+            bool hasPath = NavMesh.CalculatePath(transform.position, target, NavMesh.AllAreas, path);
+            if (!hasPath) return false;
+            if (path.status != NavMeshPathStatus.PathComplete) return false; //use this to make sure the path is complete and you can walk there. 
+            if (GetPathLength(path) > maxNavPathLength) return false;
+
+            return true;
+        }
+
+        private float GetPathLength(NavMeshPath path)
+        {
+            float total = 0;
+            if (path.corners.Length < 2) return total;
+            for (int i = 0; i < path.corners.Length - 1; i++)
+            {
+                total += Vector3.Distance(path.corners[i], path.corners[i + 1]);
+            }
+
+            return total;
         }
 
         public bool InteractWithUI()
