@@ -77,21 +77,6 @@ PrefabInstance:
       propertyPath: _suspicionTime
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4410776843588979595, guid: ac47aa5ac767b8241830d3df93e00f5a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410776843588979595, guid: ac47aa5ac767b8241830d3df93e00f5a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410776843588979595, guid: ac47aa5ac767b8241830d3df93e00f5a,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 621790621013286317, guid: ac47aa5ac767b8241830d3df93e00f5a,
         type: 3}
       propertyPath: _maxSpeed
@@ -109,10 +94,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f91c00fef47b78044acd134de2488c47,
         type: 2}
+    - target: {fileID: 3640730543099877731, guid: ac47aa5ac767b8241830d3df93e00f5a,
+        type: 3}
+      propertyPath: defaultWeaponConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: f91c00fef47b78044acd134de2488c47,
+        type: 2}
     - target: {fileID: 1239594747246534686, guid: ac47aa5ac767b8241830d3df93e00f5a,
         type: 3}
       propertyPath: healthPoints
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410776843588979595, guid: ac47aa5ac767b8241830d3df93e00f5a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410776843588979595, guid: ac47aa5ac767b8241830d3df93e00f5a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410776843588979595, guid: ac47aa5ac767b8241830d3df93e00f5a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4410776843586107311, guid: ac47aa5ac767b8241830d3df93e00f5a,
         type: 3}

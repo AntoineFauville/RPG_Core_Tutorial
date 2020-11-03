@@ -13,6 +13,7 @@ namespace RPG.Attributes
     public class Health : MonoBehaviour, ISaveable
     {
         [SerializeField] TakeDamageEvent takeDamage;
+        [SerializeField] UnityEvent onDie;
 
         [System.Serializable]
         public class TakeDamageEvent : UnityEvent<float> { }
@@ -105,6 +106,8 @@ namespace RPG.Attributes
 
             isDead = true;
             GetComponent<Animator>().SetTrigger("die");
+
+            onDie.Invoke();
 
             GetComponent<ActionScheduler>().CancelCurrentAction();
         }

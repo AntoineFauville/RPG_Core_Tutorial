@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f8df5258380b444adcb57b81332991, type: 3}
   m_Name: BowBlue
   m_EditorClassIdentifier: 
-  equippedPrefab: {fileID: 414151463483714416, guid: 915d0368a32fa634fb5d4189911dd0a3,
+  equippedPrefab: {fileID: 4913005072542297157, guid: 915d0368a32fa634fb5d4189911dd0a3,
     type: 3}
   animatorOverride: {fileID: 22100000, guid: 1811f58644ce7a3449585e5f80f03826, type: 2}
   weaponDamage: 5
+  weaponPercentageBonus: 0
   weaponRange: 8
   isRightHanded: 0
   ProjectilePrefab: {fileID: 1392034677496671633, guid: 8bd9f79e0f6365f4b95020a7d9356b42,

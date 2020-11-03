@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace RPG.Combat
 {
@@ -12,8 +13,8 @@ namespace RPG.Combat
         [SerializeField] private float maxLifeTime = 10f;
         [SerializeField] private GameObject[] destoyOnHit = null;
         [SerializeField] private float lifeAfterInpact = 2f;
-
-
+        [SerializeField] UnityEvent onHit;
+        
         Health _target = null;
         float _damage = 0;
         GameObject _hitEffectPrefab;
@@ -61,7 +62,9 @@ namespace RPG.Combat
         {
             if (other.GetComponent<Health>() != _target) { return; }
             if (_target.IsDead()) { return; }
+
             _target.TakeDamage(_instigator, _damage);
+            onHit.Invoke();
 
             if (_hitEffectPrefab != null)
             {
