@@ -2,7 +2,7 @@
 using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;
-using RPG.Resources;
+using RPG.Attributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
