@@ -67,6 +67,11 @@ namespace RPG.Attributes
             GetComponent<BaseStats>().onLevelUp -= RegenerateHealth;
         }
 
+        public void Heal(float healthToRestore)
+        {
+            healthPoints.value = Mathf.Min(healthPoints.value + healthToRestore, GetMaxHealthPoints());
+        }
+
         private void RegenerateHealth()
         {
             healthPoints.value = GetComponent<BaseStats>().GetStat(Stat.Health);

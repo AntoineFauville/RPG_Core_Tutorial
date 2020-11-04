@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e14a72067f1ad408ec8d661bc560ce, type: 3}
   m_Name: New Import Setting
   m_EditorClassIdentifier: 
-  templatePath: Asset Packs/QuickSheet/ExcelPlugin/Templates
+  templatePath: QuickSheet/ExcelPlugin/Templates
   scriptFilePath: Data/Runtime
   editorScriptFilePath: Data/Editor
   sheetName: GameStats.xlsx
