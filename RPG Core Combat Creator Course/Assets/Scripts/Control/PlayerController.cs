@@ -15,12 +15,13 @@ namespace RPG.Control
         private bool _holdOnSpamming;
         [SerializeField] private float _timeSpammClick = 0.1f;
         [SerializeField] private float _minimumDistanceToMove = 0.5f;
-        [SerializeField] float maxNavMeshProjectionDistance = 1f;
-        [SerializeField] float maxNavPathLength = 40f;
+        [SerializeField] private float _maxNavMeshProjectionDistance = 1f;
+        [SerializeField] private float _raycastRadius = 1f;
+        [SerializeField] private CursorMapping[] _cursorMappings = null;
 
-        Ray lastRay;
+        private Ray _lastRay;
 
-        Health health;
+        private Health _health;
         
         [System.Serializable]
         struct CursorMapping
@@ -29,19 +30,17 @@ namespace RPG.Control
             public Texture2D texture;
             public Vector2 hotspot;
         }
-
-        [SerializeField] private CursorMapping[] cursorMappings = null;
-
+        
         private void Awake()
         {
-            health = GetComponent<Health>();
+            _health = GetComponent<Health>();
         }
 
         void Update()
         {
             if (InteractWithUI()) { return; }
 
-            if (health.IsDead())
+            if (_health.IsDead())
             {
                 SetCursor(CursorType.None);
                 return;
@@ -73,7 +72,7 @@ namespace RPG.Control
 
         RaycastHit[] RaycastAllSorted()
         {
-            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            RaycastHit[] hits = Physics.SphereCastAll(GetMouseRay(), _raycastRadius);
             float[] distances = new float[hits.Length];
             for (int i = 0; i < hits.Length; i++)
             {
@@ -85,8 +84,8 @@ namespace RPG.Control
 
         private bool InteractWithMovement()
         {
-            Debug.DrawRay(lastRay.origin, lastRay.direction * 100);
-            lastRay = GetMouseRay();
+            Debug.DrawRay(_lastRay.origin, _lastRay.direction * 100);
+            _lastRay = GetMouseRay();
 
             Vector3 target;
             bool hasHit = RaycastNavMesh(out target);
@@ -95,6 +94,8 @@ namespace RPG.Control
             {
                 if (hasHit)
                 {
+                    if (!GetComponent<Mover>().CanMoveTo(target)) return false;
+
                     if (Input.GetMouseButton(0) && !_holdOnSpamming)
                     {
                         _holdOnSpamming = true;
@@ -118,30 +119,12 @@ namespace RPG.Control
 
             NavMeshHit navMeshHit;
             bool hasCastToNavMesh = NavMesh.SamplePosition(
-                hit.point, out navMeshHit, maxNavMeshProjectionDistance, NavMesh.AllAreas);
+                hit.point, out navMeshHit, _maxNavMeshProjectionDistance, NavMesh.AllAreas);
             if (!hasCastToNavMesh) return false;
 
             target = navMeshHit.position;
-
-            NavMeshPath path = new NavMeshPath();
-            bool hasPath = NavMesh.CalculatePath(transform.position, target, NavMesh.AllAreas, path);
-            if (!hasPath) return false;
-            if (path.status != NavMeshPathStatus.PathComplete) return false; //use this to make sure the path is complete and you can walk there. 
-            if (GetPathLength(path) > maxNavPathLength) return false;
-
+            
             return true;
-        }
-
-        private float GetPathLength(NavMeshPath path)
-        {
-            float total = 0;
-            if (path.corners.Length < 2) return total;
-            for (int i = 0; i < path.corners.Length - 1; i++)
-            {
-                total += Vector3.Distance(path.corners[i], path.corners[i + 1]);
-            }
-
-            return total;
         }
 
         public bool InteractWithUI()
@@ -162,14 +145,14 @@ namespace RPG.Control
 
         private CursorMapping GetCursorMapping(CursorType type)
         {
-            foreach (CursorMapping mapping in cursorMappings)
+            foreach (CursorMapping mapping in _cursorMappings)
             {
                 if (mapping.type == type)
                 {
                     return mapping;
                 }
             }
-            return cursorMappings[0];
+            return _cursorMappings[0];
         }
 
         private static Ray GetMouseRay()
