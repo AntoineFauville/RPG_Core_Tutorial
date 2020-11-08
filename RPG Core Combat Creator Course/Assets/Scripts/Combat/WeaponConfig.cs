@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using RPG.Attributes;
 using RPG.Inventories;
+using RPG.Stats;
 using UnityEngine;
 
 namespace RPG.Combat
 {
     [CreateAssetMenu(fileName = "WeaponConfig", menuName = "Weapons/New Weapon Config", order = 0)]
-    public class WeaponConfig : EquipableItem
+    public class WeaponConfig : EquipableItem, IModifierProvider
     {
         [SerializeField] public Weapon equippedPrefab;
         [SerializeField] public AnimatorOverrideController animatorOverride;
@@ -77,6 +79,22 @@ namespace RPG.Combat
             Projectile projectileInstance = Instantiate(ProjectilePrefab, GetTransform(rightHand, leftHand).position, Quaternion.identity);
             projectileInstance.SetTarget(target, instigator, damage);
             projectileInstance.SetupHitEffects(hitEffectPrefab);
+        }
+
+        public IEnumerable<float> GetAdditiveModifiers(Stat stat)
+        {
+            if (stat == Stat.Damage)
+            {
+                yield return weaponDamage;
+            }
+        }
+
+        public IEnumerable<float> GetPercentageModifiers(Stat stat)
+        {
+            if (stat == Stat.Damage)
+            {
+                yield return weaponPercentageBonus;
+            }
         }
 
         public float GetDamage { get { return weaponDamage; } }

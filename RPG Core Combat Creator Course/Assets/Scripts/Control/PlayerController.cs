@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.AI;
+using RPG.Inventories;
 
 namespace RPG.Control
 {
@@ -40,6 +41,8 @@ namespace RPG.Control
 
         void Update()
         {
+            CheckSpecialAbilityKeys();
+
             if (InteractWithUI()) { return; }
 
             if (_health.IsDead())
@@ -52,6 +55,15 @@ namespace RPG.Control
             if (InteractWithMovement()) { return; }
 
             SetCursor(CursorType.None);
+        }
+
+        void CheckSpecialAbilityKeys()
+        {
+            var actionStore = GetComponent<ActionStore>();
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                actionStore.Use(0, gameObject);
+            }
         }
 
         private bool InteractWithComponent()

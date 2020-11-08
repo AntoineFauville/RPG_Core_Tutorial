@@ -11,7 +11,7 @@ using RPG.Inventories;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction, ISaveable, IModifierProvider
+    public class Fighter : MonoBehaviour, IAction, ISaveable
     {
         [SerializeField] float timeBetweenAttacks = 1f;
         [SerializeField] Transform rightHandTransform = null;
@@ -172,23 +172,7 @@ namespace RPG.Combat
             GetComponent<Animator>().ResetTrigger("attack");
             GetComponent<Animator>().SetTrigger("stopAttack");
         }
-
-        public IEnumerable<float> GetAdditiveModifiers(Stat stat)
-        {
-            if (stat == Stat.Damage)
-            {
-                yield return currentWeaponConfig.GetDamage; //add more if more weapons currentWeapon2 etc
-            }
-        }
-
-        public IEnumerable<float> GetPercentageModifiers(Stat stat)
-        {
-            if (stat == Stat.Damage)
-            {
-                yield return currentWeaponConfig.GetPercentageDamageBonus; //add more if more weapons currentWeapon2 etc
-            }
-        }
-
+       
         public object CaptureState()
         {
             string nam = currentWeaponConfig.name;
