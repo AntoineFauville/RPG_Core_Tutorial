@@ -7,6 +7,7 @@ using RPG.Attributes;
 using RPG.Stats;
 using System.Collections.Generic;
 using RPG.Utils;
+using RPG.Inventories;
 
 namespace RPG.Combat
 {
@@ -22,10 +23,17 @@ namespace RPG.Combat
         WeaponConfig currentWeaponConfig;
         LazyValue<Weapon> currentWeapon;
 
+        Equipment equipment;
+
         private void Awake()
         {
             currentWeaponConfig = defaultWeaponConfig;
             currentWeapon = new LazyValue<Weapon>(SetupDefaultWeapon);
+            equipment = GetComponent<Equipment>();
+            if (equipment)
+            {
+                equipment.equipmentUpdated += UpdateWeapon;
+            }
         }
 
         private Weapon SetupDefaultWeapon()
@@ -60,6 +68,19 @@ namespace RPG.Combat
         {
             currentWeaponConfig = weaponConfig;
             currentWeapon.value = AttachWeapon(weaponConfig);
+        }
+
+        private void UpdateWeapon()
+        {
+            var weapon = equipment.GetItemInSlot(EquipLocation.Weapon) as WeaponConfig;
+            if (weapon == null)
+            {
+                EquipWeapon(defaultWeaponConfig);
+            }
+            else
+            {
+                EquipWeapon(weapon);
+            }
         }
 
         private Weapon AttachWeapon(WeaponConfig weapon)

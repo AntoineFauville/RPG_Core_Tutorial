@@ -64,11 +64,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1038664548912588651, guid: 6f7af16d36349a74c9939ed21b071f62,
-        type: 3}
-      propertyPath: m_Name
-      value: FireballPickup
-      objectReference: {fileID: 0}
     - target: {fileID: 52619591387583176, guid: 6f7af16d36349a74c9939ed21b071f62,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -124,7 +119,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1038664548912588651, guid: 6f7af16d36349a74c9939ed21b071f62,
+        type: 3}
+      propertyPath: m_Name
+      value: FireballPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943633175807321278, guid: 6f7af16d36349a74c9939ed21b071f62,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 77ce0ae7017ca6c4ba51c5ede85f932d,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: 7943633175807321278, guid: 6f7af16d36349a74c9939ed21b071f62, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6f7af16d36349a74c9939ed21b071f62, type: 3}
 --- !u!4 &9048041613661269754 stripped
 Transform:

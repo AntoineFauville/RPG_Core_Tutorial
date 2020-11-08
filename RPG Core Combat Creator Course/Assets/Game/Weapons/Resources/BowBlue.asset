@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f8df5258380b444adcb57b81332991, type: 3}
   m_Name: BowBlue
   m_EditorClassIdentifier: 
+  itemID: 88aa95d6-f3d3-4823-a51f-10b285a0963e
+  displayName: Bow Blue
+  description: Bow blue
+  icon: {fileID: 21300000, guid: ec22508be0cdfba4abbaeb770bef08aa, type: 3}
+  pickup: {fileID: 5744761518122555893, guid: 4445db4033bc5c24ebb06ed1d01fc5a9, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
   equippedPrefab: {fileID: 4913005072542297157, guid: 915d0368a32fa634fb5d4189911dd0a3,
     type: 3}
   animatorOverride: {fileID: 22100000, guid: 1811f58644ce7a3449585e5f80f03826, type: 2}
