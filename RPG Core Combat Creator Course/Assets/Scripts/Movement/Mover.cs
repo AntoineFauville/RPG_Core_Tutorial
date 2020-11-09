@@ -16,7 +16,11 @@ namespace RPG.Movement
 
         void Update()
         {
-            GetComponent<NavMeshAgent>().enabled = !GetComponent<Health>().IsDead();
+            if (GetComponent<Health>().IsDead() && GetComponent<NavMeshAgent>().enabled)
+            {
+                GetComponent<NavMeshAgent>().isStopped = false;
+                GetComponent<NavMeshAgent>().enabled = false;
+            }
 
             UpdateAnimator();
         }

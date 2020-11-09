@@ -117,6 +117,12 @@ namespace RPG.Attributes
             GetComponent<ActionScheduler>().CancelCurrentAction();
         }
 
+        private void DieAfterRestore()
+        {
+            isDead = true;
+            GetComponent<Animator>().SetTrigger("alreadyDead");
+        }
+
         public object CaptureState()
         {
             return healthPoints.value;
@@ -128,7 +134,8 @@ namespace RPG.Attributes
 
             if (healthPoints.value <= 0)
             {
-                Die();
+                DieAfterRestore();
+                //Die();
             }
         }
     }

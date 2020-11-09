@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Enemy 1 DropLibrary
   m_EditorClassIdentifier: 
   potentialDrops:
-  - item: {fileID: 11400000, guid: 0044aa6086258604cbb18cb16d7f26e0, type: 2}
+  - item: {fileID: 11400000, guid: 4c146b48c014de642898027bb05ea6e3, type: 2}
     relativeChance:
     - 3
     minNumber: 01000000
     maxNumber: 01000000
-  - item: {fileID: 11400000, guid: f91c00fef47b78044acd134de2488c47, type: 2}
+  - item: {fileID: 11400000, guid: 56610c751d66d124ca5e21492bc311bd, type: 2}
     relativeChance:
     - 1
     minNumber: 01000000
