@@ -16,6 +16,11 @@ namespace RPG.Dialogue
         [SerializeField]
         Rect rect = new Rect(0, 0, 200, 100);
 
+        [SerializeField]
+        string onEnterAction;
+        [SerializeField]
+        string onExitAction;
+
         public Rect GetRect()
         {
             return rect;
@@ -31,6 +36,16 @@ namespace RPG.Dialogue
             }             
 
             rect = ChildRectPosition;
+        }
+
+        public string GetOnEnterAction()
+        {
+            return onEnterAction;
+        }
+
+        public string GetOnExitAction()
+        {
+            return onExitAction;
         }
 
         public string GetText()
@@ -66,7 +81,7 @@ namespace RPG.Dialogue
             }
         }
 
-        public void SetPlayerIsSpeaking(bool newIsPlayerSpeaking)
+        public void SetPlayerSpeaking(bool newIsPlayerSpeaking)
         {
             Undo.RecordObject(this, "Changed Dialogue Node Speaker");
             isPlayerSpeaking = newIsPlayerSpeaking;
