@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4967156086442664816
+--- !u!114 &-7467059556964470367
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,21 +10,82 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
-  m_Name: 2999d6c5-4344-4963-875f-d2ed047b9409
+  m_Name: 3268fd90-dfa0-409b-ae22-142fa081fe70
   m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
-  text: Hi I'm bob
+  isPlayerSpeaking: 1
+  text: "I don't have a quest :\xA7( NEGATE HAS QUEST"
   children:
-  - 50a70245-8b8b-4bf3-8f81-3b708dce365f
-  - a69a26db-fad3-4059-9dfe-adecba5e35f8
+  - c679a064-cf53-4489-b2aa-2b6e1a9b3b6b
   rect:
     serializedVersion: 2
-    x: 397
-    y: 147
+    x: 535
+    y: 709
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - GoToTown
+        negate: 1
+--- !u!114 &-6966921523153161378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
+  m_Name: 2c7ebcf5-e17b-40be-bbcc-39ce0521ecdd
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: CompletedQuest
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 540
+    y: 951
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: CompletedQuest
+        parameters:
+        - GoToTown
+        negate: 0
+--- !u!114 &-6180974493764668069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
+  m_Name: 9b898bbc-cc69-48d4-9610-2b682d526e50
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Lets fight then!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 904
+    y: 609
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: Attack
+  condition:
+    and: []
 --- !u!114 &-3627255064298993415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37,19 +98,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
   m_Name: ff365cdc-d8ad-4456-b023-d9e6622a15a9
   m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
-  text: praise chtulhu ?
+  isPlayerSpeaking: 1
+  text: praise chtulhu ? HAS QUEST
   children:
-  - 99b7b3ae-d5ee-45bf-aa51-389de3bce2d2
+  - 405d88b0-2478-4ff6-92a3-244b1f96b8b0
   rect:
     serializedVersion: 2
-    x: 420
-    y: 373
+    x: 538
+    y: 496
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
---- !u!114 &-3572346956228844193
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - GoToTown
+        negate: 0
+--- !u!114 &-3415406562508973564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,20 +127,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
-  m_Name: 99b7b3ae-d5ee-45bf-aa51-389de3bce2d2
+  m_Name: 45558329-0812-4d15-801c-7b2620e5431e
   m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
-  text: well then
-  children:
-  - 405d88b0-2478-4ff6-92a3-244b1f96b8b0
+  isPlayerSpeaking: 0
+  text: Cool bruh
+  children: []
   rect:
     serializedVersion: 2
-    x: 653
-    y: 421
+    x: 828
+    y: 826
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-3223467041957424789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,12 +161,14 @@ MonoBehaviour:
   - dd50d8fd-4d8e-4f67-8e8e-995199a6d9ba
   rect:
     serializedVersion: 2
-    x: 657
-    y: 129
+    x: 521
+    y: 187
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-2632136454471234110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,16 +182,18 @@ MonoBehaviour:
   m_Name: 405d88b0-2478-4ff6-92a3-244b1f96b8b0
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: Bye I guess
+  text: I will thanks for reminder!
   children: []
   rect:
     serializedVersion: 2
-    x: 897
-    y: 472
+    x: 903
+    y: 506
     width: 200
     height: 100
   onEnterAction: 
-  onExitAction: Attack
+  onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-2553442904042417976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,12 +212,14 @@ MonoBehaviour:
   - 02e15816-a560-4a2c-aecf-8a230e2e7cd6
   rect:
     serializedVersion: 2
-    x: 655
-    y: 225
+    x: 522
+    y: 291
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-1465602935755540934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,12 +237,14 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 903
-    y: 76
+    x: 916
+    y: 104
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,16 +259,88 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: 5711539470048881045}
-  - {fileID: -4967156086442664816}
   - {fileID: -3627255064298993415}
-  - {fileID: -3572346956228844193}
   - {fileID: -3223467041957424789}
   - {fileID: -2553442904042417976}
   - {fileID: -1465602935755540934}
   - {fileID: 6387592038846883254}
   - {fileID: 6502978141835021994}
   - {fileID: -2632136454471234110}
+  - {fileID: 849503059854601953}
+  - {fileID: -6180974493764668069}
+  - {fileID: -7467059556964470367}
+  - {fileID: 6394899702114496901}
+  - {fileID: 213857922904032072}
+  - {fileID: -3415406562508973564}
+  - {fileID: -6966921523153161378}
   newNodeOffset: {x: 250, y: 0}
+--- !u!114 &213857922904032072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
+  m_Name: e6775356-9b4d-4e36-b28f-fb0ce7589a70
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: HAS INVENTORY & NEGATE QUEST
+  children:
+  - 45558329-0812-4d15-801c-7b2620e5431e
+  rect:
+    serializedVersion: 2
+    x: 534
+    y: 829
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - GoToTown
+        negate: 1
+    - or:
+      - predicate: HasInventoryItem
+        parameters:
+        - da755fab-3571-4162-a464-ae8c623eb198
+        negate: 0
+--- !u!114 &849503059854601953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
+  m_Name: 3f542176-3375-4f68-842a-6a05c53a1caf
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: I have a sword now INVENTORY ITEM
+  children:
+  - 9b898bbc-cc69-48d4-9610-2b682d526e50
+  rect:
+    serializedVersion: 2
+    x: 534
+    y: 606
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasInventoryItem
+        parameters:
+        - da755fab-3571-4162-a464-ae8c623eb198
+        negate: 0
 --- !u!114 &5711539470048881045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,11 +353,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
   m_Name: 1dfa8375-e6e3-4967-beb7-19104b6a04ea
   m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
+  isPlayerSpeaking: 0
   text: Hello
   children:
-  - 2999d6c5-4344-4963-875f-d2ed047b9409
   - ff365cdc-d8ad-4456-b023-d9e6622a15a9
+  - 50a70245-8b8b-4bf3-8f81-3b708dce365f
+  - a69a26db-fad3-4059-9dfe-adecba5e35f8
+  - 3f542176-3375-4f68-842a-6a05c53a1caf
+  - 3268fd90-dfa0-409b-ae22-142fa081fe70
+  - e6775356-9b4d-4e36-b28f-fb0ce7589a70
+  - 2c7ebcf5-e17b-40be-bbcc-39ce0521ecdd
   rect:
     serializedVersion: 2
     x: 127
@@ -217,6 +371,8 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &6387592038846883254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,16 +386,43 @@ MonoBehaviour:
   m_Name: 02e15816-a560-4a2c-aecf-8a230e2e7cd6
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: Thanks!
+  text: Thanks! give quest
   children: []
   rect:
     serializedVersion: 2
-    x: 902
-    y: 270
+    x: 907
+    y: 332
     width: 200
     height: 100
   onEnterAction: GiveQuest
   onExitAction: 
+  condition:
+    and: []
+--- !u!114 &6394899702114496901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
+  m_Name: c679a064-cf53-4489-b2aa-2b6e1a9b3b6b
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: this is awesome lets praise chtulhu
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 901
+    y: 712
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
 --- !u!114 &6502978141835021994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,9 +440,11 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 903
-    y: 174
+    x: 914
+    y: 207
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []

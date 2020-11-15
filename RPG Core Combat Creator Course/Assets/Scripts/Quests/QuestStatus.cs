@@ -1,7 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 namespace RPG.Quests
 {
@@ -29,10 +29,21 @@ namespace RPG.Quests
             completedObjectives = state.completedObjectives;
         }
 
-
         public Quest GetQuest()
         {
             return quest;
+        }
+
+        public bool IsComplete()
+        {
+            foreach (var objective in quest.GetObjectives())
+            {
+                if (!completedObjectives.Contains(objective.reference))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public int GetCompletedCount()
@@ -59,18 +70,6 @@ namespace RPG.Quests
             state.questName = quest.name;
             state.completedObjectives = completedObjectives;
             return state;
-        }
-
-        public bool IsComplete()
-        {
-            foreach (var objective in quest.GetObjectives())
-            {
-                if (!completedObjectives.Contains(objective.reference))
-                {
-                    return false;
-                }
-            }
-            return true;
         }
     }
 }

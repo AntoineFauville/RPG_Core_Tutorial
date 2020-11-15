@@ -4,15 +4,24 @@ using System.Collections.Generic;
 using RPG.Saving;
 using RPG.Inventories;
 using UnityEngine;
+using RPG.Core;
+
+//CompletedQuest
+//HasQuest
+//in inventory HasInventoryItem
 
 namespace RPG.Quests
 {
-    public class QuestList : MonoBehaviour, ISaveable
+    public class QuestList : MonoBehaviour, ISaveable, IPredicateEvaluator
     {
         List<QuestStatus> statuses = new List<QuestStatus>();
 
         public event Action onUpdate;
 
+        void Start() 
+        {
+            Debug.Log(statuses.Count);
+        }
         public void AddQuest(Quest quest)
         {
             if (HasQuest(quest)) return;
@@ -24,17 +33,38 @@ namespace RPG.Quests
             }
         }
 
+        public bool? Evaluate(string predicate, string[] parameters)
+        {
+            switch (predicate)
+            {
+                case "HasQuest":
+                    return HasQuest(Quest.GetByName(parameters[0]));
+                case "CompletedQuest":
+                    if (statuses.Count > 0) 
+                    {
+                        return GetQuestStatus(Quest.GetByName(parameters[0])).IsComplete();
+                    }
+                    return false;
+                    //return GetQuestStatus(Quest.GetByName(parameters[0])).IsComplete();
+            }
+
+            return null;
+        }
+
         public void CompleteObjective(Quest quest, string objective)
         {
-            QuestStatus status = GetQuestStatus(quest);
-            status.CompleteObjective(objective);
-            if (status.IsComplete())
+            if (statuses.Count > 0)
             {
-                GiveReward(quest);
-            }
-            if (onUpdate != null)
-            {
-                onUpdate();
+                QuestStatus status = GetQuestStatus(quest);
+                status.CompleteObjective(objective);
+                if (status.IsComplete())
+                {
+                    GiveReward(quest);
+                }
+                if (onUpdate != null)
+                {
+                    onUpdate();
+                }
             }
         }
 
