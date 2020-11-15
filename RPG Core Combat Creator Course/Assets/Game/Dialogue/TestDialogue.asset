@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-574951718943237465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
+  m_Name: d6521d30-794f-49dd-9b79-90f9ae1164a1
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: I'm a player
+  children:
+  - 2d8a9a8a-ac98-4609-9dbb-6fc89aa0a5ea
+  rect:
+    serializedVersion: 2
+    x: 533
+    y: 243
+    width: 200
+    height: 100
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79010bd62de1dbb4cb3013c0962fcad7, type: 3}
+  m_Name: TestDialogue
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 4278798196272610402}
+  - {fileID: 7235647307994946221}
+  - {fileID: -574951718943237465}
+  - {fileID: 8716136182285650802}
+  - {fileID: 4345978200689542650}
+  - {fileID: 5255423605709715624}
+--- !u!114 &4278798196272610402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
+  m_Name: cb75f5bb-0809-4833-9f6c-22b2881955fe
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Viva chtulhu
+  children:
+  - cefedc37-5591-4aae-a86a-5adfe21ffdba
+  rect:
+    serializedVersion: 2
+    x: 528
+    y: 380
+    width: 200
+    height: 100
+--- !u!114 &4345978200689542650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
+  m_Name: 438dc21f-c71f-4c4b-8753-6d7c32926e25
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Are you new in town ?
+  children:
+  - d6521d30-794f-49dd-9b79-90f9ae1164a1
+  - cb75f5bb-0809-4833-9f6c-22b2881955fe
+  rect:
+    serializedVersion: 2
+    x: 264
+    y: 269
+    width: 200
+    height: 100
+--- !u!114 &5255423605709715624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
+  m_Name: cefedc37-5591-4aae-a86a-5adfe21ffdba
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Oh ho, noice
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 803
+    y: 375
+    width: 200
+    height: 100
+--- !u!114 &7235647307994946221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
+  m_Name: 226f1ded-96fb-4f8e-8f54-2792dd321383
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Hi What can I do for ya
+  children:
+  - 438dc21f-c71f-4c4b-8753-6d7c32926e25
+  rect:
+    serializedVersion: 2
+    x: 28
+    y: 268
+    width: 200
+    height: 100
+--- !u!114 &8716136182285650802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
+  m_Name: 2d8a9a8a-ac98-4609-9dbb-6fc89aa0a5ea
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Well that's great!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 809
+    y: 233
+    width: 200
+    height: 100
