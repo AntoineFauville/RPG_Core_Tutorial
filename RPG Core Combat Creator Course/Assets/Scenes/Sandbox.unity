@@ -3120,7 +3120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quest: {fileID: 11400000, guid: a44a172072817644d8cfe8a803ec7fa5, type: 2}
-  objective: Check Cabbage mate
+  objective: cabbage
 --- !u!1001 &1164426630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8807,7 +8807,7 @@ PrefabInstance:
     - target: {fileID: 6687881022061589019, guid: e769565a41dc95343b01cee7eb865613,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -428.2994
+      value: -570.75
       objectReference: {fileID: 0}
     - target: {fileID: 6687881022061589019, guid: e769565a41dc95343b01cee7eb865613,
         type: 3}

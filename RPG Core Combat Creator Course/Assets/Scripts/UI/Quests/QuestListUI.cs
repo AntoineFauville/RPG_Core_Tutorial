@@ -16,7 +16,8 @@ public class QuestListUI : MonoBehaviour
         Redraw();
     }
 
-    private void Redraw() {
+    private void Redraw()
+    {
         transform.DetachChildren();
         foreach (QuestStatus status in questList.GetStatuses())
         {

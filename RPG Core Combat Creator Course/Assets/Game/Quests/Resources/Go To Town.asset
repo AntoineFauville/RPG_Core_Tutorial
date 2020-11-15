@@ -13,4 +13,12 @@ MonoBehaviour:
   m_Name: Go To Town
   m_EditorClassIdentifier: 
   objectives:
-  - Check Cabbage mate
+  - reference: cabbage
+    description: Find the cabbage
+  rewards:
+  - number: 1
+    item: {fileID: 11400000, guid: f91c00fef47b78044acd134de2488c47, type: 2}
+  - number: 3
+    item: {fileID: 11400000, guid: 56610c751d66d124ca5e21492bc311bd, type: 2}
+  - number: 2
+    item: {fileID: 11400000, guid: 4c146b48c014de642898027bb05ea6e3, type: 2}

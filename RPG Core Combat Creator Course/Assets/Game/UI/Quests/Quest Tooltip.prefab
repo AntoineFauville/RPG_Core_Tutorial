@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1041184411310229230}
   - component: {fileID: 2750754953592934222}
   m_Layer: 0
-  m_Name: Reward Title (1)
+  m_Name: Reward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -605,6 +605,7 @@ MonoBehaviour:
     type: 3}
   objectiveIncompletePrefab: {fileID: 2987796242219974736, guid: a61e47c4fc3245741ba92f16544ca6c7,
     type: 3}
+  rewardText: {fileID: 2750754953592934222}
 --- !u!1 &6519273645923724683
 GameObject:
   m_ObjectHideFlags: 0
