@@ -19,8 +19,8 @@ MonoBehaviour:
   - a69a26db-fad3-4059-9dfe-adecba5e35f8
   rect:
     serializedVersion: 2
-    x: 404
-    y: 154
+    x: 397
+    y: 147
     width: 200
     height: 100
   onEnterAction: 
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: a69a26db-fad3-4059-9dfe-adecba5e35f8
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
-  text: oh not you, again
+  text: I can help with cabbage
   children:
   - 02e15816-a560-4a2c-aecf-8a230e2e7cd6
   rect:
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Name: 02e15816-a560-4a2c-aecf-8a230e2e7cd6
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: hi
+  text: Thanks!
   children: []
   rect:
     serializedVersion: 2
@@ -238,7 +238,7 @@ MonoBehaviour:
     y: 270
     width: 200
     height: 100
-  onEnterAction: 
+  onEnterAction: GiveQuest
   onExitAction: 
 --- !u!114 &6502978141835021994
 MonoBehaviour:

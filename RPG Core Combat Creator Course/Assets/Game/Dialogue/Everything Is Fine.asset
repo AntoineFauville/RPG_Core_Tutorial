@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9029265016435940789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
+  m_Name: 479d19a8-a053-40f9-8fb5-86fba4002f6a
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Hello how can I help
+  children:
+  - 26a0ccad-5996-418c-b8d7-9d17f06fecd7
+  - af8078b6-0b32-47e4-8672-34132a994c14
+  rect:
+    serializedVersion: 2
+    x: 55
+    y: 224
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-867620297876030604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
+  m_Name: 26a0ccad-5996-418c-b8d7-9d17f06fecd7
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: heard about cabbage problems ?
+  children:
+  - 38940106-8c19-4dc4-b192-ac1f68263c5f
+  rect:
+    serializedVersion: 2
+    x: 312
+    y: 168
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79010bd62de1dbb4cb3013c0962fcad7, type: 3}
+  m_Name: Everything Is Fine
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -9029265016435940789}
+  - {fileID: -867620297876030604}
+  - {fileID: 7006629505821264997}
+  - {fileID: 7556766214456347229}
+  - {fileID: 5663576221587899579}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &5663576221587899579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
+  m_Name: 684cc63e-9b04-4e24-9f81-e977b18799d4
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Ok op, go away then
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 563
+    y: 280
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &7006629505821264997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
+  m_Name: af8078b6-0b32-47e4-8672-34132a994c14
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Nah nothing mate
+  children:
+  - 684cc63e-9b04-4e24-9f81-e977b18799d4
+  rect:
+    serializedVersion: 2
+    x: 313
+    y: 280
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &7556766214456347229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578df8f10418f4b4bb658aa352e7ee37, type: 3}
+  m_Name: 38940106-8c19-4dc4-b192-ac1f68263c5f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Everything is fine :)
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 564
+    y: 159
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: EndQuest
