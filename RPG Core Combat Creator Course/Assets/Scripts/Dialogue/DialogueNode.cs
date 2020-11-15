@@ -23,7 +23,12 @@ namespace RPG.Dialogue
 
         public void SetPositionToOffsetParent(DialogueNode parentRect) 
         {
-            Rect ChildRectPosition = new Rect(parentRect.GetRect().x + 220, parentRect.GetRect().y, 200, 100);
+            Rect ChildRectPosition = rect;
+
+            if (parentRect != null)
+            {
+                ChildRectPosition = new Rect(parentRect.GetRect().x + 220, parentRect.GetRect().y, 200, 100);
+            }             
 
             rect = ChildRectPosition;
         }

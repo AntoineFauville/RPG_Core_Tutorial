@@ -55,6 +55,7 @@ namespace RPG.Dialogue
             {
                 parent.AddChild(newNode.name);
             }
+
             Undo.RegisterCreatedObjectUndo(newNode, "Created Dialogue Node");
             //Undo.RecordObject(this, "Added Dialogue Node"); //DONT TURN ON IT CRASHES THE EDITOR
             nodes.Add(newNode);
