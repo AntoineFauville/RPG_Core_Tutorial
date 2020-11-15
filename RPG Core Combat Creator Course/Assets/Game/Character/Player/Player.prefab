@@ -87,11 +87,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e25df565def8146b0d87b205c395a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statuses:
-  - quest: {fileID: 11400000, guid: a44a172072817644d8cfe8a803ec7fa5, type: 2}
-    completedObjectives:
-    - See market
-    - 
 --- !u!114 &6196287794982054723
 MonoBehaviour:
   m_ObjectHideFlags: 0
