@@ -18,10 +18,6 @@ namespace RPG.Quests
 
         public event Action onUpdate;
 
-        void Start() 
-        {
-            Debug.Log(statuses.Count);
-        }
         public void AddQuest(Quest quest)
         {
             if (HasQuest(quest)) return;
